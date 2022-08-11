@@ -7,15 +7,6 @@ const { graphqlHTTP } = require('express-graphql')
 const graphQlSchema = require('./schema')
 const graphQlResolvers = require('./resolvers')
 
-let root = {
-    hello:()=>{
-        return 'Hello world!'
-    },
-    learn:()=>{
-        return 'Learning GraphQl'
-    },
-}
-
 app.use('/graphql', graphqlHTTP({
     schema:graphQlSchema,
     rootValue:graphQlResolvers,
